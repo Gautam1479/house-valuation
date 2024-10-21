@@ -1,6 +1,6 @@
 numpy 
 streamlit 
-joblib 
 scikit-learn
 pandas
 pickle
+joblib
