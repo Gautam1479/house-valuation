@@ -39,8 +39,7 @@ import pickle
 # Load the model from the .pkl file
 with open('Housing.pkl', 'rb') as file:
     model = pickle.load(file)
-st.write(model)
-
+# st.write(model)
 if st.button('Predict'):
 
     val= scaler.transform([[val1,val2,val3,val4,val5]])
