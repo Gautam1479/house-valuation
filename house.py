@@ -4,7 +4,7 @@ import streamlit as st
 from sklearn.preprocessing import StandardScaler as ss
 import pandas as pd
 import pickle
-# import joblib
+import joblib
 # 
 # Streamlit app configuration
 st.set_page_config("House Valuation")
@@ -43,9 +43,9 @@ df.drop_duplicates(inplace=True)
 df.drop(labels=["hotwaterheating"], axis=1, inplace=True)
 scaler = ss()
 scaler.fit(df[['area', 'bedrooms', 'bathrooms', 'stories', 'parking']])
-with open('Housing.pkl', 'rb') as file:
-    model = pickle.load(file)
-model=pickle.load('Housing.pkl')
+# with open('Housing.pkl', 'rb') as file:
+#     model = pickle.load(file)
+model=joblib.load('Housing.pkl')
 if st.button('Predict'):
     scaled_vals = scaler.transform([[val1, val2, val3, val4, val5]])
     scaled_vals = scaled_vals.flatten()
